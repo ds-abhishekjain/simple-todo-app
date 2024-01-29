@@ -3,7 +3,12 @@ const port = 3000
 const app = express()
 const {todoModel} = require('./db')
 
-app.use(express.json())
+const cors = require('cors')
+
+app.use(express.json());
+app.use(cors({
+    origin : "http://localhost:5173"
+}));
 
 const {todoSchema,updateTodoSchema} = require("./types");
 
@@ -29,7 +34,7 @@ app.post('/todos',async (req,res) => {
         title : createPayLoad.title,
         description : createPayLoad.description,
         completed : false
-    }) 
+    })  
 
     res.json({
         msg: "Todo created"
