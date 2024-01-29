@@ -9,4 +9,7 @@ It has the following features -
 
 // initialise a node project
 // put a package.json
+// express and mondo db for backend and zod for input validation
+// react for frontend
+
 
